@@ -1,6 +1,11 @@
 ---
 name: atlas
-description: Plan and track work too big for one session as GitHub issues: a tracking issue that indexes everything, child issues wired with real blocking relationships, a project board and milestones, so any agent can pick up the next ready piece by reading the tracker. Use when starting a large or foggy effort, when asked to plan something that spans sessions, to chart or map out work, to open issues for a plan, or to find and work the next ready issue.
+description: >-
+  Plan and track work too big for one session as GitHub issues: a tracking issue that indexes
+  everything, child issues wired with real blocking relationships, a project board and
+  milestones, so any agent can pick up the next ready piece by reading the tracker. Use when
+  starting a large or foggy effort, when asked to plan something that spans sessions, to chart
+  or map out work, to open issues for a plan, or to find and work the next ready issue.
 ---
 
 # Atlas

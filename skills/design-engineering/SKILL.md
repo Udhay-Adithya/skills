@@ -1,6 +1,16 @@
 ---
 name: design-engineering
-description: Build and review interfaces that feel right: motion that earns its place, concentric radii, optical alignment, shadows for elevation, theme-driven colour, tabular numbers, real hit areas, and keyboard paths. Reads the project's own stack and design tokens first and expresses every fix in that system. Use when building or changing any screen, component, widget, style, theme, animation, transition, hover or press state, when something "feels off" or needs polish, and when reviewing frontend or UI code. Triggers on UI, interface, frontend, component, widget, screen, design, polish, feels off, make it feel better, animation, transition, easing, duration, spring, stagger, hover, focus, press, border radius, shadow, elevation, spacing, typography, icon, colour, contrast, theme, dark mode, accessibility, keyboard, hit area, skeleton, empty state.
+description: >-
+  Build and review interfaces that feel right: motion that earns its place, concentric radii,
+  optical alignment, shadows for elevation, theme-driven colour, tabular numbers, real hit
+  areas, and keyboard paths. Reads the project's own stack and design tokens first and expresses
+  every fix in that system. Use when building or changing any screen, component, widget, style,
+  theme, animation, transition, hover or press state, when something "feels off" or needs
+  polish, and when reviewing frontend or UI code. Triggers on UI, interface, frontend,
+  component, widget, screen, design, polish, feels off, make it feel better, animation,
+  transition, easing, duration, spring, stagger, hover, focus, press, border radius, shadow,
+  elevation, spacing, typography, icon, colour, contrast, theme, dark mode, accessibility,
+  keyboard, hit area, skeleton, empty state.
 ---
 
 # Design engineering

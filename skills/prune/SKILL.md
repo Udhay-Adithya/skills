@@ -1,6 +1,11 @@
 ---
 name: prune
-description: Write and prune documents that agents read: skills, CLAUDE.md, AGENTS.md, NOTES.local.md and anything reached by a pointer. Finds duplicated meaning, stale lines, no-ops and sprawl, and cuts them. Use when creating or editing a skill, changing CLAUDE.md or AGENTS.md, when two documents say different things about one subject, when a document has grown long, or when instructions are being ignored.
+description: >-
+  Write and prune documents that agents read: skills, CLAUDE.md, AGENTS.md, NOTES.local.md and
+  anything reached by a pointer. Finds duplicated meaning, stale lines, no-ops and sprawl, and
+  cuts them. Use when creating or editing a skill, changing CLAUDE.md or AGENTS.md, when two
+  documents say different things about one subject, when a document has grown long, or when
+  instructions are being ignored.
 ---
 
 # Prune
