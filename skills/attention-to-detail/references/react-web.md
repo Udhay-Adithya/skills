@@ -10,18 +10,15 @@ cat node_modules/motion/package.json | grep '\"version\"'
 
 The declared range is not the installed version. Read the installed one.
 
-## Tailwind 3 against Tailwind 4
+## Where the values come from
 
-**Tailwind 3** keeps tokens in `tailwind.config.js` under `theme.extend`, and dark mode
-is the `dark:` variant driven by a class or a data attribute set in the config.
+`design-engineering`'s colour and theme reference owns where tokens live, which differs
+between Tailwind 3 and 4 and fails silently if you get it wrong. Read it before adding a
+token.
 
-**Tailwind 4** moves tokens into a `@theme` block in CSS and needs no config file.
-
-Writing a `@theme` block into a Tailwind 3 project does nothing, silently. Check which one
-is installed before adding a token.
-
-Arbitrary values are the escape hatch, not the habit: `rounded-[20px]` once is fine,
-`rounded-[20px]` in nine components means the scale needs an entry.
+What belongs here is the restraint: arbitrary values are an escape hatch, not a habit.
+`rounded-[20px]` once is fine. `rounded-[20px]` in nine components means the scale is
+missing an entry, and the fix is the scale, not a tenth arbitrary value.
 
 ## Motion: the version matters
 

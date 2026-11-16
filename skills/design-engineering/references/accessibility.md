@@ -123,6 +123,32 @@ is a 16px font size on the input, not disabling zoom for everyone.
 Every drag interaction needs a single-pointer alternative that reaches the same result, a
 button or a menu that moves the item, under 2.5.7.
 
+## Target size
+
+2.5.8 AA requires 24x24 CSS pixels, or one of its exceptions. The larger 44x44 and 40x40
+figures are craft targets rather than requirements, and they live with the rest of the hit
+area rules in `attention-to-detail`, including the collision rule and the
+`pointer-events` trap. The requirement is here; the craft is there.
+
+## In Flutter
+
+- `Semantics(label:)` on anything whose meaning is visual only. An `IconButton` takes a
+  `tooltip`, which supplies the semantic label too.
+- `ExcludeSemantics` for decoration, `MergeSemantics` so a label and its control announce
+  as one thing rather than two.
+- Reduced motion is `MediaQuery.of(context).disableAnimations`. Branch on it and
+  cross-fade instead of sliding. `accessibleNavigation` says a screen reader is active,
+  which is when a custom gesture needs its button alternative.
+- Focus is real on web and desktop: `FocusTraversalGroup` to fix a traversal order,
+  `Shortcuts` and `Actions` or `CallbackShortcuts` for key handling. Flutter's default
+  focus highlight is faint, so check it against the actual surface rather than assuming it
+  is visible.
+- Text scaling arrives through `MediaQuery.textScalerOf(context)`. A fixed-height
+  container holding text clips at large scale factors, so constrain with a minimum.
+- Material's tap target floor is 48x48, stricter than the web's. `MaterialTapTargetSize.
+  shrinkWrap` removes the invisible padding that provides it, which is how a small
+  `IconButton` becomes genuinely hard to hit.
+
 ## Patterns to catch on sight
 
 | Pattern | Fix |

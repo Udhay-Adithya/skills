@@ -31,8 +31,18 @@ on-ramps merge onto it. Everything else is standalone.
    charting, the spec and the task breakdown all build on the same thinking.
 
 3. **Build each task in its own window.** Each task is self-contained, so the previous
-   one's context is disposable. **`design-engineering`** fires by itself on anything with
-   a surface, and **`flutter-riverpod-mvvm`** on anything in Dart. Neither needs invoking.
+   one's context is disposable. **`flutter-riverpod-mvvm`** fires by itself on anything in
+   Dart.
+
+   Anything with a surface takes two passes, in order. **`design-engineering`** decides
+   what goes on the screen, what it is called, which states it has and whether it works by
+   keyboard. **`attention-to-detail`** then does the finishing: radii, optical alignment,
+   spacing, typography rendering, icon weight, hit areas, press feedback and the exact
+   motion values. The first depends on the second and hands off to it.
+
+   Running only the first leaves a well-structured screen that looks unfinished. Running
+   only the second polishes something that may not have needed to exist. Neither needs
+   invoking by hand.
 
 4. **`code-quality`** reviews the diff on five axes before it goes anywhere, with the
    mutation check on the tests. For anything touching auth, permissions, money, data loss
@@ -81,7 +91,9 @@ These run beneath the others rather than beside them.
 |---|---|
 | A loose idea, too big to hold in one session | `atlas` |
 | A clear idea, needs building properly | `spec-first` |
-| Any screen, component, widget or style | `design-engineering` |
+| A new screen, flow or component | `design-engineering`, then `attention-to-detail` |
+| It works, but it looks unfinished | `attention-to-detail` |
+| It looks fine, but the structure is wrong | `design-engineering` |
 | Anything in Dart or Flutter | `flutter-riverpod-mvvm` |
 | A diff to review before merge | `code-quality` |
 | Auth, permissions, money, concurrency | `crucible`, then `security-review` |
