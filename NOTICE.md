@@ -134,6 +134,17 @@ npx skills add emilkowalski/skill -g --skill '*'
 npx skills add jakubkrehel/skills -g --skill '*'
 ```
 
-`design-engineering` is my own distillation of what I actually reach for across those two
-sets, plus Addy Osmani's `frontend-ui-engineering`, written so it stands alone and covers
-both of my stacks. It owes them its content and copies none of their text.
+`design-engineering` and `attention-to-detail` are my own distillation of what I actually
+reach for across those two sets, plus Addy Osmani's `frontend-ui-engineering` and
+`better-layout` and `better-writing` from the jakubkrehel set. They stand alone, cover
+both of my stacks, and copy none of their text.
+
+They started as one skill and were split along the seam between deciding what the
+interface is and finishing how it looks. The seam is worth stating, because every
+borderline case is resolved by it: `design-engineering` owns anything that changes what a
+person can do or understand, and `attention-to-detail` owns anything that only changes
+whether it looks cared for. So the keyboard path, the empty state and the error wording
+are design; the radius, the easing curve and the icon stroke are detail. Hit areas sit
+awkwardly across it and are split deliberately: the 24x24 WCAG requirement is design, the
+44x44 craft target and the collision rules are detail, and each file points at the other
+rather than restating it.

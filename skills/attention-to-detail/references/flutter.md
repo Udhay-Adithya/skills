@@ -1,24 +1,8 @@
 # Flutter
 
-The same decisions, in Flutter terms. Pairs with the `flutter-riverpod-mvvm` skill, which
-owns the architecture; this file owns how it looks and feels.
-
-## Colour comes from the theme
-
-`ShadTheme.of(context).colorScheme` in a shadcn_ui project, `Theme.of(context)` in a
-Material one. Never `Colors.red`, `Colors.green` or a `Color(0xFF...)` literal in a
-widget.
-
-Status colours are a `ThemeExtension` registered once, for both brightnesses, because
-shadcn's scheme has `destructive` and no success. Read it with a static accessor rather
-than reaching into the extension at each call site.
-
-`ShadApp.router` with a `materialThemeBuilder` is the root: it derives a Material theme
-from the active `ShadThemeData` so Material widgets inside third-party packages, an
-`fl_chart` tooltip or a date picker, land in a coherent theme instead of default blue.
-That builder is also where the status extension is registered.
-
-Charts get one bridge file mapping the active scheme onto the chart library's inputs.
+The craft decisions, in Flutter terms. `flutter-riverpod-mvvm` owns the architecture,
+`design-engineering` owns the theme, the states and accessibility, and this file owns how
+the result looks and feels.
 
 ## Easing translates exactly
 
@@ -154,32 +138,15 @@ equivalent of `-webkit-font-smoothing` and nothing to set.
 `ConstrainedBox(maxWidth: 960)` or similar keeps a wide web layout readable; text running
 the full width of a desktop browser is unreadable regardless of the type choices.
 
-## State, loading and errors
+## Skeletons
 
-Four states, drawn exhaustively, as the architecture skill sets out. The visual rules:
+A loading skeleton is plain containers sized like the content, never a
+`CircularProgressIndicator` in a `Center`. Build it from the same spacing and radius
+tokens as the real content, so the two cannot drift apart, and check that the layout does
+not jump when the data lands.
 
-- Loading is a skeleton in the shape of the content. Blocks sized like the text and rows
-  that are coming, not a `CircularProgressIndicator` in a `Center`.
-- An error in one panel degrades that panel.
-- An empty state says what would be there and how to get it.
-- Test the skeleton against the real content and check the layout does not jump when the
-  data lands. A skeleton of the wrong height is worse than none.
-
-## Accessibility
-
-- `Semantics(label:)` on anything whose meaning is visual only. An `IconButton` takes a
-  `tooltip`, which also supplies the semantic label.
-- `ExcludeSemantics` for decoration, `MergeSemantics` to make a row of label and control
-  announce as one thing.
-- Reduced motion is `MediaQuery.of(context).disableAnimations`. Branch on it and
-  cross-fade instead of sliding. `accessibleNavigation` tells you a screen reader is
-  active, which is when a custom gesture needs its button alternative.
-- Focus on web and desktop is real: `FocusTraversalGroup` to fix a traversal order,
-  `Shortcuts` and `Actions` or `CallbackShortcuts` for key handling, and a visible focus
-  ring. Flutter's default focus highlight is faint, so check it against the surface rather
-  than assuming it is there.
-- Text scaling comes through `MediaQuery.textScalerOf(context)`. Fixed-height containers
-  holding text clip at large scale factors, so constrain with `minHeight`.
+`design-engineering`'s states reference owns which states exist and what each one says.
+This is only how to draw them.
 
 ## Performance
 
