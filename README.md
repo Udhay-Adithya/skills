@@ -34,13 +34,14 @@ npx skills update -g -y
 
 ## What is in here
 
-Nineteen skills. `which-skill` is the router: ask it and it names the flow to take.
+Twenty skills. `which-skill` is the router: ask it and it names the flow to take.
 
 ### Building
 
 | Skill | For |
 | --- | --- |
-| `design-engineering` | Any interface, in Flutter or on the web. Motion that earns its place, concentric radii, optical alignment, shadows for elevation, theme-driven colour, real hit areas, keyboard paths. Reads the project's own stack and tokens first. Six references, one per concern and one per stack |
+| `design-engineering` | What goes on the screen: hierarchy, grouping, reading order, every state including the empty and the broken one, the copy, and whether it works by keyboard. Reads the project's design system first, then hands the finishing pass over |
+| `attention-to-detail` | The finishing pass: concentric radii, optical alignment, spacing, shadows against borders, typography rendering, tabular figures, icon weight, hit areas, press feedback, and the exact easing and duration of every animation |
 | `flutter-riverpod-mvvm` | Flutter architecture: four layers per feature, `Either<Failure, T>` out of repositories, a sealed failure hierarchy, exhaustive four-state UI, no service locator |
 | `spec-first` | A gated spec before any code: assumptions surfaced, vague requirements reframed as testable criteria, a hard stop before planning |
 | `release` | Deriving a semver bump from the Conventional Commits in a tag range, then landing it as its own commit |
@@ -101,9 +102,9 @@ skill that fails to trigger is a rule that silently stopped applying.
 
 ## Attribution
 
-Sixteen of these started as someone else's, from Theo Browne, Matt Pocock, Addy Osmani and
-Cloudflare, all MIT. [NOTICE.md](NOTICE.md) records what came from where, what changed,
-and the places where I deliberately disagree with the original.
+Some of these started as someone else's work, all of it MIT. [NOTICE.md](NOTICE.md)
+records what came from where, what changed, and the places where I deliberately disagree
+with the original. Upstream licences are in [licences/](licences).
 
 ## Licence
 
